@@ -1,0 +1,84 @@
+.wind-text {
+  min-height: 4rem;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  color: rgba(235, 244, 255, 0.95);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  line-height: 1.7;
+
+  text-align: center;
+
+  text-shadow:
+    0 0 8px rgba(220, 235, 255, 0.35),
+    0 0 18px rgba(150, 200, 255, 0.2);
+}
+
+.wind-letter {
+  display: inline-block;
+  white-space: pre;
+
+  transition:
+    opacity 900ms ease,
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms ease;
+}
+
+/* Las letras llegan y forman la frase */
+
+.wind-text--entering .wind-letter {
+  opacity: 0;
+  transform: translateY(8px);
+  filter: blur(4px);
+
+  animation: letter-arrive 900ms ease forwards;
+  animation-delay: var(--delay);
+}
+
+/* La frase permanece formada */
+
+.wind-text--visible .wind-letter {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
+  filter: blur(0);
+}
+
+/* El viento se lleva las letras */
+
+.wind-text--leaving .wind-letter {
+  opacity: 0;
+
+  transform:
+    translate(var(--drift-x), var(--drift-y))
+    rotate(var(--rotation));
+
+  filter: blur(4px);
+
+  transition-delay: calc(var(--index) * 18ms);
+}
+
+@keyframes letter-arrive {
+  from {
+    opacity: 0;
+
+    transform:
+      translate(
+        calc(var(--drift-x) * -0.4),
+        calc(var(--drift-y) * -0.5)
+      )
+      rotate(calc(var(--rotation) * -0.5));
+
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+    filter: blur(0);
+  }
+}

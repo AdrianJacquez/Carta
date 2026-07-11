@@ -1,0 +1,115 @@
+.moon-conversation {
+  width: min(90vw, 380px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.response-button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  color: rgba(235, 244, 255, 0.9);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(210, 230, 255, 0.25);
+  border-radius: 999px;
+
+  backdrop-filter: blur(8px);
+
+  pointer-events: none;
+  cursor: pointer;
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.response-button--visible {
+  opacity: 1;
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+.response-button--leaving {
+  opacity: 0;
+
+  transform:
+    translate(50px, -15px)
+    rotate(4deg);
+
+  filter: blur(4px);
+
+  pointer-events: none;
+}
+
+.response-button:active {
+  transform: scale(0.96);
+}
+
+.puzzle-clues {
+  width: 100%;
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.puzzle-clue {
+  padding: 0.55rem 0.75rem;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  color: rgba(235, 244, 255, 0.78);
+  font-size: 0.86rem;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(210, 230, 255, 0.16);
+  border-radius: 999px;
+}
+
+.letter-card {
+  width: 100%;
+  margin-top: 1.4rem;
+  padding: 1.2rem 1.15rem;
+
+  color: rgba(24, 30, 46, 0.92);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+
+  background: linear-gradient(135deg, #f7efe0 0%, #e7d7b3 100%);
+  border: 1px solid rgba(96, 72, 39, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(4, 10, 25, 0.22);
+
+  transform: translateY(30px);
+  opacity: 0;
+  animation: letter-rise 1s ease forwards;
+}
+
+.letter-card__heading {
+  margin: 0 0 0.35rem;
+
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes letter-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

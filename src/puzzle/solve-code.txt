@@ -1,0 +1,28 @@
+Cómo resolver el código secreto
+
+1. El código tiene 4 dígitos.
+2. Cada dígito es un número del 1 al 9.
+3. Ningún número se repite.
+
+Qué significa cada pista:
+- "Exactos": números que están en la posición correcta.
+- "Desplazados": números que pertenecen al código, pero están en otra posición.
+
+Ejemplo de pista:
+4829
+Exactos: 1 · Desplazados: 2
+
+Interpretación:
+- El 4 está en la posición correcta.
+- Dos de los dígitos restantes (8, 2, 9) aparecen en el código, pero en otra posición.
+- Uno de esos dígitos no está en el código.
+
+Estrategia para resolverlo:
+1. Anota cada intento y su resultado.
+2. Busca dígitos que aparecen frecuentemente en pistas con desplazados o exactos.
+3. Prueba combinaciones con esos dígitos, cuidando que no se repitan.
+4. Usa el conteo exacto para colocar correctamente los números.
+5. Si una pista dice Exactos: 0 y Desplazados: 0, ninguno de esos cuatro números pertenece al código.
+6. El código maestro de desarrollo es 6666, pero el código real es aleatorio cada vez que se abre la página.
+
+Recuerda: no se trata de adivinar al azar, sino de usar las pistas para eliminar opciones y ubicar los números correctos con lógica.

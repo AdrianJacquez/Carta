@@ -1,0 +1,20 @@
+.night-background {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+
+  background: linear-gradient(
+    185deg,
+    #030712 30%,
+    #0c2552 70%,
+    #054381 100%
+  );
+
+}
+
+.night-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
