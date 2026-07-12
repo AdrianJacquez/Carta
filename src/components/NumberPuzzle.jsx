@@ -7,15 +7,15 @@ const NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const NumberPuzzle = ({ secretCode, onComplete }) => {
   const [input, setInput] = useState([]);
   const [status, setStatus] = useState("playing");
-  const [feedback, setFeedback] = useState("Introduce el código de 4 dígitos.");
+  const [feedback, setFeedback] = useState("Introduce el código de 6 dígitos.");
 
   const handleNumber = (number) => {
-    if (status !== "playing" || input.length >= 4) return;
+    if (status !== "playing" || input.length >= 6) return;
 
     const nextInput = [...input, number];
     setInput(nextInput);
 
-    if (nextInput.length < 4) {
+    if (nextInput.length < 6) {
       setFeedback("Sigue, la luna está atenta.");
       return;
     }
@@ -70,7 +70,7 @@ const NumberPuzzle = ({ secretCode, onComplete }) => {
   return (
     <div className={`number-puzzle number-puzzle--${status}`}>
       <div className="code-display">
-        {Array.from({ length: 4 }, (_, index) => (
+        {Array.from({ length: 6 }, (_, index) => (
           <span
             key={index}
             className={`code-slot ${index < input.length ? "code-slot--solved" : ""}`}
@@ -90,7 +90,7 @@ const NumberPuzzle = ({ secretCode, onComplete }) => {
             key={number}
             className="number-button"
             onClick={() => handleNumber(number)}
-            disabled={status !== "playing" || input.length >= 4}
+            disabled={status !== "playing" || input.length >= 6}
           >
             {number}
           </button>

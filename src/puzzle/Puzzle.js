@@ -1,6 +1,6 @@
-const CODE_LENGTH = 4;
+const CODE_LENGTH = 6;
 const NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const MASTER_CODE = "6666";
+const MASTER_CODE = "666666";
 
 export function generateCode() {
   const available = [...NUMBERS];
